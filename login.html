@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<title>Mothers Hospital</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<link rel="stylesheet" type="text/css" href="hospital.css"/>
+		<script src="login.js"></script>
+	</head>
+	
+	<body>
+	
+		<table class="header">
+			<tr >
+				<td><a href="complaints.html">Complaints & Feedback</a></td>
+				<td class="header-head"> Emergency<br>12234455</td>
+				<td>Book Appointment<br>667577777</td>
+			</tr>
+		
+		</table>
+		
+		<table class="heading">
+			<tr >
+				<td><a href="home.html"><img src="istockphoto-888672368-612x612.jpg" alt="" class="logo"></a></td>
+				<td><h1><center>Mothers Hospital</center></h1></td>
+				<td><a href="home.html" class="login-link">Home</a></td>
+				<td><a href="register.html" class="login-link">Register</a></td>
+				<td><a href="" class="login-link">About Us</a></td>
+			</tr>
+		
+		</table>
+	
+		
+		<div class="container">
+		   
+				<div  class="login_form" >
+					<img src="login.jpg"  class="login_image">
+						<form name="login_form" action="register.html" method="post">
+							<div class="login">
+								<label for="email" ><strong>Email id</strong></label>
+									<input type="text" id="login_email" value="" name="email" class="texts" required placeholder="Email Id"  onfocusout="checkemail()">
+								<small id="email_error"></small>
+							</div>
+						
+						<div class="password">
+							<label for="pswrd" ><strong>Password</strong></label>
+								<input type="password" id="paswrd" value="" class="texts" placeholder="Password" onfocusout="checkpassword()">
+								<center><small id="paswrd_error"></small></center>
+						</div>
+							
+							<div class="selection">
+							<label><strong>Role</strong></label>
+							<select id="role" class="roles">
+								<option value="patients">Patients</option>
+								<option value="doctors">Doctors</option>
+								<option value="others">Other Staff</option>
+								</select>
+							</div>
+								<div class="button">
+									<input type="submit" id="submit"  value="Login" class="register" onclick="login()" > 
+								</div>
+									<label><strong>Not A Member?</strong></label>
+										<a href="register.html">Register Now</a>
+						</form>
+				</div>
+		</div>
+	</body>
+</html>

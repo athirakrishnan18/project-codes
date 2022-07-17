@@ -1,0 +1,308 @@
+/*Home page background
+.home-background{
+	background-color: #A3E4D7;
+}
+
+*/
+.texts{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 1px 0;
+  box-sizing: border-box;
+  border: 5px solid #ccc;
+  outline: none;
+				
+}
+
+label{
+	font-size:15px;
+    font-style: oblique;
+	padding-right: 20px;
+		
+}
+
+
+.login_form{
+	padding-left: 20px;
+	margin-top: 20px;
+	border: 5px outset yellow;
+	width:450px;
+	height: 450px;
+	margin-left: 500px;
+	background-image: url("test.jpg");
+	
+}
+/*@media only screen and (max-width: 480px) {}*/
+.login_image{
+	width:50px;
+	height:50px;
+	padding-left:120px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+
+}
+
+.container{
+	/*background-image:url("background.jpg");*/
+	
+	
+}
+.password{
+	padding-top:20px;
+}
+.button{
+	text-align:center;
+	padding-top: 5px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+}
+
+.header{
+width: 100%;
+	background-color: #F4ECF7;
+	border: 0px solid black;
+	height: 50px;
+}
+.header a{
+	text-decoration: none;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	color: #34495E;
+	padding-left: 20px;
+	
+}
+/*heading style starts*/
+.header td{
+	padding-left: 20px;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	color: #34495E;
+}
+.heading h1{
+	color:#063D7B;
+	/*text-align: center;*/
+	padding-left: 40px;
+	padding-right: 0px;
+}
+
+.heading{
+	background-color: #40E0D0;
+	width: 100%;
+}
+.heading-menu{
+padding-left: 0px;	
+}
+.header-head{
+	padding-right: 50px;
+}
+/*Logo and header links style*/
+.logo{
+	width:100px;
+	height:100px;
+	padding-left:15px;
+}
+.login-link{
+	padding-left: 5px;
+	padding-right: 1px;
+	text-decoration: none;
+	font-family: Garamond, serif;
+	font-size: 20px;
+	
+}
+/* home page div image*/
+@media only screen and (max-width: 600px){
+
+.bimage{
+	max-width: 100%;
+  height: auto;
+	
+}
+	}
+.home-images{
+	background-image:url("web_.jpg");
+	height: 500px;
+	width: 100%;
+}
+.about-us-heading{
+	text-align: center;
+	color: #7B241C;
+	
+}
+.about-us{
+	text-align:center;
+	padding-left: 20px;
+}
+.row{
+	 background-color: #B2BABB;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+
+	
+}
+.department-list h2{
+	padding-top: 70px;
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+	height: 50px;
+}
+.gallery-image{
+	width: 100%;
+	height:100%;
+}
+.login-title{
+	padding-right: 100px;
+}
+.roles{
+	
+	 width: 50%;
+  padding: 12px 20px;
+  margin: 1px 0;
+  box-sizing: border-box;
+  border: 5px solid #ccc;
+  outline: none;
+	margin-top: 10px;
+	margin-left: 29px;
+	
+				
+}
+.selection{
+	padding-top: 5px;
+}
+
+/*for button style*/
+.register{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+			}
+/* for giving colour on textbox in focus*/
+input:focus {
+	border-color: #BB8FCE;
+	
+}
+.register-text{
+	width: 40%;
+  padding: 12px 20px;
+  margin: 1px 0;
+  box-sizing: border-box;
+  border: 5px solid #ccc;
+  outline: none;
+}
+
+/* style for dropdown in register page*/
+.dept{
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 5px solid #ccc;
+			}
+select:focus {
+	border-color: #BB8FCE;
+	
+}
+/* Register page main div*/
+.register-box{
+	background-color: #E6E6FA;
+	
+	width: 800px;
+	margin-left: 400px;
+	margin-top: 20px;
+	padding-top: 20px;
+	border: 1px ;
+  
+  box-shadow: 5px 10px #D8BFD8;
+	border-radius: 15px;
+	padding-bottom: 20px;
+	
+}
+
+/* Style for home page about us div*/
+.home-aboutus{
+	background-color: #A3E4D7 ;
+}
+/*Style for register field divs*/
+.register-field{
+	padding-bottom: 2px; 
+	padding-top: 2px;
+}
+
+/* Register page div label*/
+.register-box label{
+	text-align: center;
+}
+/*Home page grid view style*/
+.grid-container{
+	display: grid;
+	grid-template-columns: auto auto auto;
+  gap: 10px;
+	max-width:  80%;
+	height: auto;
+	margin-left: 10%;
+}
+
+.grid-container img{
+	max-width: 80%;
+	margin-left: 30px;
+	
+
+
+	
+	webkit-transform: scale(1);
+	transform: scale(1);
+	webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	
+	}
+
+.grid-container:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+
+
+
+
+.grid-container h2{
+	text-align: center;
+}
+.outer_grid h1{
+	text-align: center;
+	color: #7B241C;
+}
+.grid-container div{
+	border: 1px #7BF4DC solid;
+	box-shadow:5px 10px #C2F4EA ;
+}
+/*login page javascript style*/
+#email_error{
+	color: red;
+	margin-left: 115px;
+}
+.login input:focus{ 
+ border:1px;	
+ outline:none;
+ border:2px solid #e74c3c;	
+}
+#paswrd_error {
+	color: red;
+	
+}
+/*Registration page javascript style*/
+.errormsg_div{
+	text-align: center;
+	color: red;
+}
+
