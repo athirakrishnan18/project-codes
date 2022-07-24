@@ -1,0 +1,139 @@
+						CRUD OPeration Login
+
+USE [hospitalmanagement]
+GO
+/****** Object:  StoredProcedure [dbo].[CrudOperation]    Script Date: 24-07-2022 20:02:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+ALTER PROCEDURE [dbo].[CrudOperation]
+	-- Add the parameters for the stored procedure here
+	@login_id int =0,
+	@username varchar(20)=null,
+	@log_password varchar(20)=null,
+	@check varchar(100)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	if @check = 'INSERT'
+	begin
+	insert into hospital_login(username,log_password)values(@username,@log_password)
+	end
+
+	if @check = 'UPDATE'
+	begin
+	update hospital_login set
+	username=@username,log_password=@log_password where login_id=@login_id
+	end
+
+	if @check = 'DELETE'
+	begin
+	delete from  hospital_login where login_id=@login_id
+	end
+END
+-----------------------------------------------------------------------------------------------------------
+USE [hospitalmanagement]
+GO
+/****** Object:  StoredProcedure [dbo].[joins]    Script Date: 24-07-2022 20:03:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[joins] 
+as
+begin
+select h1.login_id,h1.username,r1.p_name from  hospital_login h1 inner join registration r1 on h1.login_id=r1.regid
+end
+--------------------------------------------------------------------------------------------------------------re
+						CRUD operation for registration
+
+USE [hospitalmanagement]
+GO
+/****** Object:  StoredProcedure [dbo].[RegInsert]    Script Date: 24-07-2022 20:04:26 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[RegInsert]
+@regid int =0,
+@p_name varchar(100)=null,
+@gender varchar(100)=null,
+@dob date=null,
+@p_address varchar(100)=null,
+@city varchar(100)=null,
+@contact_no int=0,
+@email_id varchar(100)=null,
+@dept varchar(100)=null,
+@Type varchar(100)
+AS 
+BEGIN
+IF @Type='insert'
+BEGIN
+ INSERT INTO registration (p_name,gender,dob,p_address,city,contact_no,email_id,dept)values(@p_name,@gender,@dob,@p_address,@city,@contact_no,@email_id,@dept)
+END
+
+IF @Type='update'
+BEGIN
+ UPDATE  registration SET  p_name=@p_name,gender=@gender,dob=@dob,p_address=@p_address,city=@city,contact_no=@contact_no,email_id=@email_id,dept=@dept where regid=@regid
+END
+
+IF @Type='delete'
+BEGIN
+delete from   registration  where regid=@regid;
+END
+
+IF @Type='select'
+BEGIN
+select @regid,@p_name,@gender,@dob,@p_address,@city,@contact_no,@email_id,@dept from   registration;
+END
+
+
+IF @Type='selectbyid'
+BEGIN
+select @regid,@p_name,@gender,@dob,@p_address,@city,@contact_no,@email_id,@dept from   registration where regid=@regid;
+END
+
+END
+-------------------------------------------------------------------------------------------------------------------
+						select by id in registration
+USE [hospitalmanagement]
+GO
+/****** Object:  StoredProcedure [dbo].[selectbyid]    Script Date: 24-07-2022 20:06:14 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[selectbyid]
+	@regid int
+AS
+BEGIN
+	
+    -- Insert statements for procedure here
+	SELECT regid,p_name,gender,dob,p_address,city,contact_no,email_id,dept from registration where regid=@regid
+END
+-----------------------------------------------------------------------------------------------------------------
+								select for details
+
+USE [hospitalmanagement]
+GO
+/****** Object:  StoredProcedure [dbo].[selectdetails]    Script Date: 24-07-2022 20:06:58 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[selectdetails] 
+	
+AS
+BEGIN
+	select regid,p_name,gender,dob,p_address,city,contact_no,email_id,dept from   registration;
+END
