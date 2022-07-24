@@ -1,0 +1,117 @@
+﻿@model IEnumerable<HospitalManagementNew.Models.patientmodel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (TempData["InfoMessage"] != null)
+{
+    <div class="alert alert-info">
+        <strong>Info</strong>@TempData["error"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+else if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        <strong>success</strong>@TempData["success"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+else if (TempData["error"] != null)
+{
+    <div class="alert alert-error">
+        <strong>error</strong>@TempData["error"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+
+
+@Html.ActionLink("Register New Member", "create")
+@if (TempData["Infomessage"] != null)
+{
+    <div class="alert alert-info">
+        <strong>Information</strong>@TempData["Infomessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+}
+
+
+<h2>Mothers Hospital</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.regid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.p_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dob)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.p_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contact_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dept)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.regid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.p_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.p_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contact_no)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dept)
+            </td>
+            <td>
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.regid }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.regid })
+            </td>
+        </tr>
+    }
+
+</table>
