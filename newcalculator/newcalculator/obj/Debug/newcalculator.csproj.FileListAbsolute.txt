@@ -1,0 +1,11 @@
+C:\Users\91954\source\repos\newcalculator\newcalculator\bin\Debug\newcalculator.exe.config
+C:\Users\91954\source\repos\newcalculator\newcalculator\bin\Debug\newcalculator.exe
+C:\Users\91954\source\repos\newcalculator\newcalculator\bin\Debug\newcalculator.pdb
+C:\Users\91954\source\repos\newcalculator\newcalculator\obj\Debug\newcalculator.csproj.AssemblyReference.cache
+C:\Users\91954\source\repos\newcalculator\newcalculator\obj\Debug\newcalculator.csproj.SuggestedBindingRedirects.cache
+C:\Users\91954\source\repos\newcalculator\newcalculator\obj\Debug\newcalculator.Form1.resources
+C:\Users\91954\source\repos\newcalculator\newcalculator\obj\Debug\newcalculator.Properties.Resources.resources
+C:\Users\91954\source\repos\newcalculator\newcalculator\obj\Debug\newcalculator.csproj.GenerateResource.cache
+C:\Users\91954\source\repos\newcalculator\newcalculator\obj\Debug\newcalculator.csproj.CoreCompileInputs.cache
+C:\Users\91954\source\repos\newcalculator\newcalculator\obj\Debug\newcalculator.exe
+C:\Users\91954\source\repos\newcalculator\newcalculator\obj\Debug\newcalculator.pdb
