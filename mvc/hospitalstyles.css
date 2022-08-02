@@ -1,0 +1,144 @@
+﻿
+.topheader td {
+    color: #495C83;
+}
+.appointment {
+    text-align: right;
+}
+
+.topheader {
+    background-color: #94B49F;
+}
+.header {
+    background-color: #377D71;
+}
+    .header h4 {
+        color: #FFF2F2;
+        text-align: center;
+        margin-left: 50%;
+        margin-right: 50px;
+    }
+    .header a {
+        color: #B2C8DF;
+        text-decoration:none;
+    }
+        
+        /*div clss image*/
+        .divimage {
+            background-image: url('../images/doctor-.jpg');
+            height: 500px;
+        }
+
+.header img{
+    
+}
+/*body our mission style*/
+.divimage h3 {
+    text-align: center;
+    color: #B93160;
+    font-style:oblique;
+   
+}
+.mission {
+    text-align: center;
+    font-family: Tahoma, sans-serif;
+}
+.rowimages{
+    width:200px;
+   
+
+}
+.rowparagraph {
+    padding-top: 12%;
+    font: italic 1.2em "Courier, monospace", serif;
+    -moz-box-shadow: inset 0 0 10px #446A46;
+    -webkit-box-shadow: inset 0 0 10px #446A46;
+    box-shadow: inset 0 0 10px #446A46;
+    color: #61481C;
+    margin-right: 5%;
+}
+.missioncontainer{
+    margin-right:20%;
+}
+.department_images {
+    max-width: 100%;
+   
+}
+.dept_headings {
+    color: #66BFBF;
+}
+.dept_paragraphs {
+    text-align: justify;
+    
+    
+}
+.depdiv{
+    border:dashed;
+}
+@media (max-width: 1199.98px) {
+    .dept_paragraphs {
+        font-size: 10px;
+       height: 120px;
+        
+    }
+}
+
+/*Login page styles*/
+.login_heading h2 {
+    color: #495C83;
+    text-align: center;
+}
+.login {
+    background-color: #CEE5D0;
+    max-width: 500px;
+    height: 300px;
+    margin-left: 30%;
+}
+.styletext {
+    padding-left: 20%;
+    padding-top: 30px;
+}
+.login-button{
+    padding-left:25%;
+    margin-top:20px;
+    margin-left:15%;
+    
+}
+.text-danger{
+   color:red;
+}
+.registerbutn a {
+    color: #F1F1F1;
+    text-decoration: none;
+    border: inherit;
+    background-color: #0F3D3E;
+    border-radius: 5px;
+    width: 300px;
+    height: 500px;
+}
+.registerbutn {
+    margin-top: 20px;
+    margin-bottom: 2%;
+    padding: 2px 6px 2px 6px;
+}
+
+/*new regiser oage style*/
+.register h2 {
+    color: #495C83;
+    text-align: center;
+}
+.register_texts {
+    display: flex;
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left:25%;
+}
+.register_background {
+    background-color: #E7F6F2;
+    max-width: 500%;
+}
+.register_button{
+    padding-left:45%;
+    padding-bottom:2%;
+}
+
