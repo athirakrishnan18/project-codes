@@ -1,0 +1,129 @@
+﻿@model HospitalManagementNew.Models.Staffdetails
+
+@{
+    ViewBag.Title = "Edit";
+}
+<head>
+    @Styles.Render("~/Content/hospitalstyles.css")
+
+
+</head>
+
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>
+            Error/strong>@TempData["error"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+}
+else if (TempData["success"] != null)
+{
+    <div class="alert alert-info">
+        <strong>Information</strong>@TempData["success"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+}
+
+
+<h2>Edit Staff Details</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal register_background">
+       
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group register_texts">
+            @Html.LabelFor(model => model.staffid, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.staffid, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.staffid, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group register_texts">
+            @Html.LabelFor(model => model.staffname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.staffname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.staffname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group register_texts">
+            @Html.LabelFor(model => model.staffaddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.staffaddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.staffaddress, "", new { @class = "text-danger" })
+            </div>
+            @Html.ValidationMessageFor(Model => Model.gender, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group register_texts">
+            @Html.LabelFor(model => model.gender, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                Male
+                @Html.RadioButtonFor(model => model.gender, "male")
+                Female
+                @Html.RadioButtonFor(model => model.gender, "female")
+            </div>
+        </div>
+
+        <div class="form-group register_texts">
+            @Html.LabelFor(model => model.stafftype, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.stafftype, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.stafftype, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group register_texts">
+            @Html.LabelFor(model => model.position, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.position, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.position, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group register_texts">
+            @Html.LabelFor(model => model.salary, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.salary, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.salary, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group register_texts">
+            @Html.LabelFor(model => model.dateofjoining, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dateofjoining, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.dateofjoining, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 register_button">
+                <input type="submit" value="Save" class="btn btn-info" />
+            </div>
+
+            <div class="registerbutn">
+                @Html.ActionLink("Back to List", "Staffdetails")
+            </div>
+
+
+        </div>
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

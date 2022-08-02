@@ -1,0 +1,123 @@
+﻿@model HospitalManagementNew.Models.Roomdetailsmodel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<head>
+    @Styles.Render("~/Content/hospitalstyles.css")
+
+
+</head>
+
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>
+            Error/strong>@TempData["error"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+}
+else if (TempData["success"] != null)
+{
+    <div class="alert alert-info">
+        <strong>Information</strong>@TempData["success"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+}
+
+
+
+<div class="register">
+    <h2>Edit</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal register_background">
+    <h4>Roomdetailsmodel</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group register_texts">
+        @Html.LabelFor(model => model.roomid, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.roomid, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.roomid, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group register_texts">
+        @Html.LabelFor(model => model.roomtype, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.roomtype, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.roomtype, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group register_texts">
+        @Html.LabelFor(model => model.roomno, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.roomno, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.roomno, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group register_texts">
+        @Html.LabelFor(model => model.numberofbed, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.numberofbed, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.numberofbed, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group register_texts">
+        @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group register_texts">
+        @Html.LabelFor(model => model.roomstatus, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.roomstatus, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.roomstatus, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group register_texts">
+        @Html.LabelFor(model => model.blockname, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.blockname, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.blockname, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group register_button">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-info" />
+        </div>
+    </div>
+    <div class="registerbutn">
+        @Html.ActionLink("Back to List", "Roomdetailsdispaly")
+    </div>
+
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

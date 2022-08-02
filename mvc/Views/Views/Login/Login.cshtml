@@ -1,0 +1,77 @@
+﻿@model HospitalManagementNew.Models.Login
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutPageLogin.cshtml";
+    }
+
+
+<head>
+    @Styles.Render("~/Content/hospitalstyles.css")
+   
+
+</head>
+
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>
+            Error</strong>@TempData["error"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+}
+else if (TempData["success"] != null)
+{
+    <div class="alert alert-info">
+        <strong>Information &nbsp;</strong>@TempData["success"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+}
+<body>
+    <div class="login_heading">
+        <h2>Login</h2>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal login">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group styletext">
+                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group styletext">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="form-group ">
+                <div class="col-md-offset-2 col-md-10 login-button">
+                    <input type="submit" value="Login" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

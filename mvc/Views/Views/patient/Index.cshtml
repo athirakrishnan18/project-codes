@@ -1,0 +1,130 @@
+﻿@model IEnumerable<HospitalManagementNew.Models.patientmodel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = " ~/Views/Shared/_Layout.cshtml";
+}
+
+
+<head>
+    @Styles.Render("~/Content/hospitalstyles.css")
+
+
+</head>
+
+
+@if (TempData["InfoMessage"] != null)
+{
+    <div class="alert alert-info">
+        <strong>Info</strong>@TempData["error"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+else if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        <strong>success</strong>@TempData["success"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+else if (TempData["error"] != null)
+{
+    <div class="alert alert-error">
+        <strong>error</strong>@TempData["error"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+
+<div class = "registerbutn ">
+    @Html.ActionLink("Register New Member", "create", new {@class="btn btn-primary"})
+
+</div>
+
+@if (TempData["Infomessage"] != null)
+{
+    <div class="alert alert-info">
+        <strong>Information</strong>@TempData["Infomessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+}
+
+
+
+<table class="table table-striped">
+
+    <thead class="table-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.regid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.p_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dob)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.p_address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contact_no)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dept)
+            </th>
+            <th></th>
+    </thead>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.regid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.p_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.p_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contact_no)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dept)
+            </td>
+            <td>
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.regid }, new { @class = "btn btn-primary" }) &nbsp;&nbsp;
+                @Html.ActionLink("Delete", "Delete", new { id = item.regid }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

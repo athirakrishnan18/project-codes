@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    
+    @Styles.Render("~/Content/css")
+    
+
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="container">
+        <div >
+
+            <div class=" navbar-header">
+
+
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" title="more options" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+             
+
+            </div>
+            <div class="header " >
+
+
+                <table class="table">
+                    <tr>
+                        <td>
+                        </td>
+                        <td><h4>Mothers Hospital</h4></td>
+                        <td>
+                            @Html.ActionLink("Home", "HomeIndex", "Homepage", null, new { @class = "nav-link" })
+                        </td>
+
+                        <td>@Html.ActionLink("Login", "Login", "Login", null, new { @class = "nav-link" })</td>
+                        <td>@Html.ActionLink("AboutUS", "About Us", "AboutUs", null, new { @class = "nav-link" })</td>
+                        
+
+
+
+                    </tr>
+
+                </table>
+            </div>
+
+
+
+
+
+            <div class="container body-content">
+                @RenderBody()
+            </div>
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+        </div>
+    </div>
+</body>
+</html>

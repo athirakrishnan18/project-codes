@@ -1,0 +1,74 @@
+﻿@model IEnumerable<HospitalManagementNew.Models.Roomdetailsmodel>
+
+@{
+    ViewBag.Title = "Roomdetailsdispaly";
+}
+<head>
+    @Styles.Render("~/Content/hospitalstyles.css")
+
+
+</head>
+
+<h2>Room Details </h2>
+
+<div class = "registerbutn ">
+    @Html.ActionLink("Create Room", "Create")
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.roomid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.roomtype)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.roomno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numberofbed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.roomstatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.blockname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.roomid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.roomtype)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.roomno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numberofbed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.roomstatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.blockname)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.roomid }, new {@class="btn btn-primary"}) &nbsp;
+            
+            @Html.ActionLink("Delete", "Delete", new {  id=item.roomid }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
