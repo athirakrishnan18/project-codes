@@ -1,0 +1,108 @@
+﻿@model IEnumerable<HospitalManagementNew.Models.Staffdetails>
+
+@{
+    ViewBag.Title = "Staffdetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<head>
+    @Styles.Render("~/Content/hospitalstyles.css")
+
+
+</head>
+
+
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>
+            Error
+        </strong>@TempData["error"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+}
+else if (TempData["success"] != null)
+{
+    <div class="alert alert-info">
+        <strong>Information &nbsp;</strong>@TempData["success"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+
+    </div>
+}
+
+
+
+<h2>Staff Details</h2>
+
+<div  class = "registerbutn ">
+    @Html.ActionLink("Create New Staff", "Create")
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.staffid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.staffname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.staffaddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stafftype)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.position)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateofjoining)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.staffid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.staffname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.staffaddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stafftype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateofjoining)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.staffid }, new { @class = "btn btn-primary" })
+
+                @Html.ActionLink("Delete", "Delete", new {  id=item.staffid }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

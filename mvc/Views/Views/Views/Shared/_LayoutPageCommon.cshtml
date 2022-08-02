@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/hospitalstyles.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="topheader ">
+       
+        <table class="table">
+            <tr>
+                <td >Complaints and Feedback</td>
+                <td><center>Emergency 12234455</center></td>
+                <td class="appointment">Book An Appointment 180354646</td>
+            </tr>
+        </table>
+    </div>
+    <div class="header">
+       <table class="table">
+           <tr>
+               <td>
+               </td>
+               <td><h4>Mothers Hospital</h4></td>
+               <td>
+                   @Html.ActionLink("Home", "Index", "Homepage")
+               </td>
+
+               <td>@Html.ActionLink("Login", "Login", "Login")</td>
+              @*@ <td>@Html.ActionLink("Register", "Create", "patient")</td>@*@
+
+               <td>@Html.ActionLink("AboutUS", "About Us", "AboutUs")</td>
+
+
+
+           </tr>
+
+       </table>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+
+     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+
+</body>
+</html>
