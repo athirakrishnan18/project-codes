@@ -35,13 +35,12 @@ namespace HospitalManagementNew.Models
         [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail is not valid")]
         public string email_id { get; set; }
 
-        [DisplayName("Password")]
-        public string password { get; set; }
-
         [Required]
         [DisplayName("Department")]
         public string dept { get; set; }
-        
+
+        //public string userrole { get; set; }
+
         public string type { get; set; }
 
 
