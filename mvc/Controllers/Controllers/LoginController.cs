@@ -37,10 +37,13 @@ namespace HospitalManagementNew.Controllers
                 }
                 else
                 {
-                    if (roles[0].role.ToString() != "admin") {
+                    
+                    if (roles[0].role.ToString() == "user") {
                         TempData["error"] = "welcome user";
-                       // Session["login_id"]=roles[0].login_id.ToString();
-                    return RedirectToAction("userlogin", "Login");
+                      
+                        Session["login_id"]=roles[0].login_id.ToString();
+                       // Login.uid = Convert.ToInt32(Session["login_id"]);
+                    return RedirectToAction("Index", "Appointment");
                 }
                 }
                 //return RedirectToAction("Index", patientmodel);
@@ -53,6 +56,38 @@ namespace HospitalManagementNew.Controllers
             }
             
         }
+
+
+
+
+
+
+        public class BaseController : Controller
+        {
+            protected override void OnActionExecuting(ActionExecutingContext filterContext)
+            {
+                Session["login_id"] = Session.SessionID;
+                base.OnActionExecuting(filterContext);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public ActionResult userlogin(Login login)
         {
