@@ -52,6 +52,7 @@ namespace HospitalManagementNew.Controllers
                     {
                         TempData["success"] = "Patient details inserted successfully";
                     }
+                    else
                     {
                         TempData["error"] = "Details not inserted";
                     }

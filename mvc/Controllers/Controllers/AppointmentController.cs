@@ -65,7 +65,7 @@ namespace HospitalManagementNew.Controllers
             return View();
         }
 
-        // GET: Appointment/Edit/5
+        // GET: Appointment/Edit/Select patients based on id
         public ActionResult Booked(int id)
         {
 
@@ -87,14 +87,41 @@ namespace HospitalManagementNew.Controllers
             }
         }
 
-        // POST: Appointment/Edit/5
+        // POST: Appointment/Booking for appointment/5
         [HttpPost]
-        public ActionResult Booked(int id, FormCollection collection)
+        public ActionResult Booked(AppointmentModel appointmentModel)
         {
-            
+            //var list = new List<string>() { " Dr.Hari Ortology", "Dr.Maya Cardiology", "Dr.Sruthi Neurology", "Dr.Biji Gastrology" };
+            // ViewBag.list=list;
+
+            try
+            {
+                bool IsInserted = false;
+                if (ModelState.IsValid)
+                {
+                    IsInserted = appointmentrepository.BookAppointmentStatus(appointmentModel);
+                    if (IsInserted)
+                    {
+                        TempData["success"] = "Appoinment done successfully";
+                        return RedirectToAction("Index", "Appointment");
+                    }
+                    else
+                    {
+                        TempData["success"] = "Appoinment not done successfully";
+                    }
+
+                }
+
+                return View();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
 
 
-            return View();
         }
 
         // GET: Appointment/Delete/5
@@ -118,5 +145,29 @@ namespace HospitalManagementNew.Controllers
                 return View();
             }
         }
+
+        //For displaying user status
+        public ActionResult CheckStatus(int id)
+        {
+
+
+            var bookid = appointmentrepository.getstatusbyid(id).FirstOrDefault();
+          
+            if (bookid != null)
+            {
+                //TempData["success"] = "patient details entered successfully";
+
+                return View(bookid);
+
+            }
+            else
+            {
+                //TempData["error"] = "Details not updated";
+                return View();
+
+            }
+        }
+
+
     }
 }
