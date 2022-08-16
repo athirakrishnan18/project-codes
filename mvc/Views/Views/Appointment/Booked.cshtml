@@ -93,9 +93,18 @@ else if (TempData["success"] != null)
     <div class="form-group register_texts">
         @Html.LabelFor(model => model.gender, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.gender, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.gender, "", new { @class = "text-danger" })
+
+
+            Male
+            @Html.RadioButtonFor(model => model.gender, "male")
+            Female
+            @Html.RadioButtonFor(model => model.gender, "female")
+
+
+            @*@@Html.EditorFor(model => model.gender, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.gender, "", new { @class = "text-danger" })@*@
         </div>
+        @Html.ValidationMessageFor(Model => Model.gender, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-group register_texts">
@@ -103,16 +112,19 @@ else if (TempData["success"] != null)
         <div class="col-md-10">
             @Html.EditorFor(model => model.emailid, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.emailid, "", new { @class = "text-danger" })
+
         </div>
+
+
     </div>
 
-    <div class="form-group register_texts">
-        @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
-        </div>
-    </div>
+    @*@ <div class="form-group register_texts">
+            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+            </div>
+        </div>@*@
 
     <div class="form-group register_texts">
         @Html.LabelFor(model => model.dept, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -131,19 +143,49 @@ else if (TempData["success"] != null)
     </div>
 
     <div class="form-group register_texts">
-        @Html.LabelFor(model => model.doctors, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.dept, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownList("Doctors", new List<SelectListItem> 
+            @Html.EditorFor(model => model.dept, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.dept, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-     { new SelectListItem { Text = "Select Department", Value = "", Selected=true},
-           new SelectListItem { Text = "Dr.Hari Ortology", Value = "1"},
-       new SelectListItem { Text = "Dr.Priya Cardiology", Value = "2"},
-       new SelectListItem { Text = "Dr.Anju Neurology", Value = "3"}
-       })
+    <div class="form-group register_texts">
+        @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
         </div>
     </div>
 
 
+
+    <div class="form-group register_texts">
+        @Html.LabelFor(model => model.doctors, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+
+            @Html.EditorFor(model => model.doctors, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.doctors, "", new { @class = "text-danger" })
+
+
+
+
+
+
+            @*@ @Html.DropDownList("Department", new List<SelectListItem>
+
+                {
+                      new SelectListItem { Text = " Dr.Hari Ortology", Value = "Dr.Hari",Selected=true},
+                  new SelectListItem { Text = "Dr.Maya Cardiology", Value = "Dr.Maya"},
+                  new SelectListItem { Text = " Dr.Sruthi Neurology", Value = "Dr.Sruthi"},
+                  new SelectListItem { Text = "Dr.Biji Gastrology", Value = "Dr.Biji"}
+                  },"Select Department")
+                   @Html.DropDownListFor(model=>model.doctors,new SelectList(ViewBag.list),"Select Department")@*@
+
+        </div>
+        @*@ @Html.ValidationMessageFor(model => model.doctors,"", new { @class = "text-danger" })@*@
+
+    </div>
 
 
 
@@ -155,14 +197,17 @@ else if (TempData["success"] != null)
             </div>
         </div>@*@
 
-    <div class="form-group">
+    <div class="form-group register_button">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+            <input type="submit" value="Book Appointment" class="btn btn-info" />
         </div>
+
+        <div class="registerbutn">
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+
     </div>
 </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

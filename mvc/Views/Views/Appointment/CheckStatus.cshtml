@@ -1,0 +1,116 @@
+﻿@model HospitalManagementNew.Models.AppointmentModel
+
+@{
+    ViewBag.Title = "CheckStatus";
+}
+
+
+<head>
+    @Styles.Render("~/Content/hospitalstyles.css")
+
+
+</head>
+
+
+<div class="register">
+    <h2>Check Your Status</h2>
+</div>
+<div class="register_background">
+
+    <hr />
+
+    
+
+
+
+    <dl class="dl-horizontal ">
+
+        <div>
+            <dt class="register_texts">
+                @Html.DisplayNameFor(model => model.bookid)
+                @Html.DisplayFor(model => model.bookid)
+            </dt>
+        </div>
+        <div>
+            <dt class="register_texts">
+                @Html.DisplayNameFor(model => model.patientname)
+                @Html.DisplayFor(model => model.patientname)
+            </dt>
+        </div>
+
+        <div>
+            <dt class="register_texts">
+                @Html.DisplayNameFor(model => model.patientaddress)
+                @Html.DisplayFor(model => model.patientaddress)
+            </dt>
+        </div>
+        <div>
+            <dt class="register_texts">
+                @Html.DisplayNameFor(model => model.dob)
+                @Html.DisplayFor(model => model.dob)
+            </dt>
+        </div>
+        <div>
+            <dt class="register_texts">
+                @Html.DisplayNameFor(model => model.age)
+                @Html.DisplayFor(model => model.age)
+            </dt>
+        </div>
+        <div>
+            <dt class="register_texts">
+                @Html.DisplayNameFor(model => model.phoneno)
+                @Html.DisplayFor(model => model.phoneno)
+            </dt>
+
+        </div>
+        <div>
+            <dt class="register_texts">
+                @Html.DisplayNameFor(model => model.gender)
+                @Html.DisplayFor(model => model.gender)
+            </dt>
+        </div>
+        <div>
+            <dt class="register_texts">
+                @Html.DisplayNameFor(model => model.emailid)
+                @Html.DisplayFor(model => model.emailid)
+            </dt>
+        </div>
+        <div>
+            <dt class="register_texts">
+                @Html.DisplayNameFor(model => model.dept)
+                @Html.DisplayFor(model => model.dept)
+            </dt>
+        </div>
+        <div>
+            <dt class="register_texts">
+                @Html.DisplayNameFor(model => model.datebooked)
+                @Html.DisplayFor(model => model.datebooked)
+            </dt>
+        </div>
+
+        <div>
+            <dt class="register_texts">
+                @Html.DisplayNameFor(model => model.doctors)
+                @Html.DisplayFor(model => model.doctors)
+            </dt>
+        </div>
+        <div>
+            <dt class="register_texts">
+                @Html.DisplayNameFor(model => model.userstatus)
+                @Html.DisplayFor(model => model.userstatus)
+            </dt>
+
+        </div>
+
+       @*@ <dd class="register_texts">
+           
+        </dd>@*@
+
+    </dl>
+
+    <div class="registerbutn">
+
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+

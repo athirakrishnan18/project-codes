@@ -1,18 +1,38 @@
-﻿@model IEnumerable<HospitalManagementNew.Models.AppointmentModel>
+﻿@model IEnumerable<HospitalManagementNew.Models.BookedPatientsMode>
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutPageUser.cshtml";
 }
 
-<head>
-    @Styles.Render("~/Content/hospitalstyles.css")
+@if (TempData["InfoMessage"] != null)
+{
+    <div class="alert alert-info">
+        <strong>Info</strong>@TempData["error"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+else if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        <strong>success</strong>@TempData["success"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+else if (TempData["error"] != null)
+{
+    <div class="alert alert-error">
+        <strong>error</strong>@TempData["error"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
 
 
-</head>
 
-<h3>Welcome to Mothers Hospital</h3>
 
+
+
+<h2>Booking Details</h2>
 
 
 <table class="table">
@@ -26,7 +46,6 @@
         <th>
             @Html.DisplayNameFor(model => model.patientaddress)
         </th>
-      
         <th>
             @Html.DisplayNameFor(model => model.dob)
         </th>
@@ -34,22 +53,25 @@
             @Html.DisplayNameFor(model => model.age)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.phoneno)
+            @Html.DisplayNameFor(model => model.phone_no)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.gender)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.doctor)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.emailid)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.password)
+            @Html.DisplayNameFor(model => model.datebooked)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.dept)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.datebooked)
+            @Html.DisplayNameFor(model => model.userstatus)
         </th>
         <th></th>
     </tr>
@@ -66,7 +88,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.patientaddress)
             </td>
-           
             <td>
                 @Html.DisplayFor(modelItem => item.dob)
             </td>
@@ -74,37 +95,32 @@
                 @Html.DisplayFor(modelItem => item.age)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.phoneno)
+                @Html.DisplayFor(modelItem => item.phone_no)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.gender)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.doctor)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.emailid)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.dept)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.datebooked)
             </td>
             <td>
-                @Html.ActionLink("Book ", "Booked", new { id = item.bookid }, new {@class="btn btn-primary"}) &nbsp
-                @Html.ActionLink("Check Status", "CheckStatus", new {  id=item.bookid }, new { @class = "btn btn-info" }) 
-                @*@@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })@*@
+                @Html.DisplayFor(modelItem => item.dept)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userstatus)
+            </td>
+            <td>
+                @Html.ActionLink("Accept", "Edit", new { id = item.bookid }, new { @class = "btn btn-primary" }) &nbsp;
+
+                @Html.ActionLink("Reject", "Cancel", new { id = item.bookid }, new { @class = "btn btn-danger" })
             </td>
         </tr>
     }
 
 </table>
-<script>
-
-    $('#Booked').click(function (e) {
-        e.preventDefault();
-        return false;
-    });
-
-</script>
