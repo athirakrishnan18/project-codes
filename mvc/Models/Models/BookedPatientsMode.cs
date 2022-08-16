@@ -7,10 +7,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HospitalManagementNew.Models
 {
-    public class AppointmentModel
+    public class BookedPatientsMode
     {
         [DisplayName("Booking Id")]
+        [Required]
         public int bookid { get; set; }
+
         [Required]
         [DisplayName("Name")]
         public string patientname { get; set; }
@@ -18,7 +20,7 @@ namespace HospitalManagementNew.Models
         [DisplayName("Address")]
         public string patientaddress { get; set; }
         [Required]
-       
+
         [DisplayName("Date of Birth")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
@@ -28,38 +30,28 @@ namespace HospitalManagementNew.Models
         public int age { get; set; }
         [Required]
         [DisplayName("Phone No.")]
-     
-        public int phoneno { get; set; }
+
+        public int phone_no { get; set; }
         [Required]
         [DisplayName("Gender")]
         public string gender { get; set; }
-
+        [DisplayName("Doctor")]
         [Required]
-        [DisplayName("Username")]
+        public string doctor { get; set; }
+        [Required]
+        [DisplayName("Email Id")]
         public string emailid { get; set; }
-
-
-        [Required]
-        [DisplayName("Password")]
-        public string password { get; set; }
-
-
-        [Required]
-        [DisplayName("Department")]
-        public string dept { get; set; }
-
-        [Required]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [DisplayName("Date of Booking")]
+        [DisplayName("Date Of Booking")]
         public DateTime datebooked { get; set; }
-
-        public string type { get; set; }
-        [DisplayName("Doctors")]
+        [DisplayName("Department")]
+        [Required]
+        public string dept { get; set; }
+        [DisplayName("Status")]
+        public string userstatus { get; set; }
         
-        public string doctors { get; set; }
-        [DisplayName("Booking Status")]
-        public string userstatus    { get; set; }
+
+        
+
 
 
     }
